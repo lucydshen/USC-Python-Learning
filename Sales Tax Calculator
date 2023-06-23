@@ -1,0 +1,29 @@
+# create variables for "dress"
+item_1 = "dress"
+item_1_price = 8
+item_1_amt = 5
+
+# create variables for "pants"
+item_2 = "pants"
+item_2_price = 10
+item_2_amt = 4
+
+# create sales tax variable
+sales_tax = 4.3
+
+# calculate total price and then final price with tax
+total_price_no_tax = item_1_price * item_1_amt + item_2_price * item_2_amt
+final_price = total_price_no_tax + total_price_no_tax * sales_tax * 0.01
+
+# print out receipt
+print("Item 1: " + str(item_1))
+print("Cost: " + str(item_1_price))
+print("Number purchased: " + str(item_1_amt))
+print("\n")
+print("Item 2: " + str(item_2))
+print("Cost: " + str(item_2_price))
+print("Number purchased: " + str(item_2_amt))
+print("\n")
+print("Sales tax: " + str(sales_tax))
+print("\n")
+print("Price after tax: " + str(final_price))
