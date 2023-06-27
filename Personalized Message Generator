@@ -1,0 +1,16 @@
+# creates variables for inputs
+first_name = input("Please enter your first name:")
+last_name = input("Please enter your last name:")
+age = input("Please enter your age:")
+integer = input("Please enter an integer:")
+fav_color = input("Please enter your favorite color:")
+# calculates total age in variable years based on age and random integer entered
+total_age = int(age) + int(integer)
+
+# prints code using input strings and values
+print("Hello, " + first_name + " " + last_name[0] + "! Your name is " + str(len(first_name)) + " characters long."
+      + "In " + str(integer) + " years, you will be " + str(total_age) + " years old." 
+                                                                         "Your favorite color is "
+      + fav_color.upper() + "!")
+print("")
+print("Thank you for using the Personalized Message Generator!")
