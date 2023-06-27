@@ -1,0 +1,46 @@
+# creates variables to hold user inputs
+age = input("Age:")
+day = input("Day of Week:").lower()
+code = input("Coupon Code:")
+price = 0
+
+# creates lists to simplify list of days that apply to each if statement
+accepted_days = ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"]
+mid_week_days = ["tuesday", "wednesday", "thursday"]
+weekend_days = ["friday", "saturday", "sunday"]
+
+# checks conditions and outputs correct price in variable
+if int(age) > 0 and day in accepted_days:
+    if int(age) >= 65:
+        if day == "monday" or day in mid_week_days:
+            price = 10
+        elif day in weekend_days:
+            price = 15
+    elif int(age) >= 18:
+        if day == "monday" or day in mid_week_days:
+            price = 15
+        elif day in weekend_days:
+            price = 25
+    elif int(age) >= 6:
+        if day == "monday":
+            price = 5
+        elif day in mid_week_days:
+            price = 10
+        elif day in weekend_days:
+            price = 15
+    elif int(age) < 6:
+        price = 0
+else:
+    print("Age/Day of week is not valid.")
+
+# checks for coupon codes and adjusts price if applicable
+if code == "HALFOFF":
+    price = price/2
+    print("Price: $" + str(price))
+elif code == "MINUS5":
+    price = price - 5
+    if int(price) < 0:
+        price = 0
+    print("Price: $" + str(price))
+else:
+    print("Price: $" + str(price))
