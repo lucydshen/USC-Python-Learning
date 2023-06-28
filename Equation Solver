@@ -1,0 +1,63 @@
+# imports sqrt function from math module
+from math import sqrt
+
+
+# assigns variables from user input values
+a = input("a:")
+b = input("b:")
+c = input("c:")
+
+
+# function finds the sum of the arguments
+def sum(a, b, c):
+    return int(a) + int(b) + int(c)
+
+
+# function finds the product of the arguments
+def product(a, b, c):
+    return int(a) * int(b) * int(c)
+
+
+# function finds the largest value among the arguments
+def largest(a, b, c):
+    if int(a) > int(b):
+        if int(a) >= int(c):
+            return int(a)
+        elif int(c) >= int(a):
+            return int(c)
+    elif int(a) < int(b):
+        if int(b) >= int(c):
+            return int(b)
+        elif int(c) >= int(b):
+            return int(c)
+
+
+# function finds the smallest value among the arguments
+def smallest(a, b, c):
+    if int(a) < int(b):
+        if int(a) <= int(c):
+            return int(a)
+        elif int(c) <= int(a):
+            return int(c)
+    elif int(b) < int(a):
+        if int(b) <= int(c):
+            return int(b)
+        elif int(c) <= int(b):
+            return int(c)
+
+
+# function finds the area of a triangle with argument values as side lengths
+def area(a, b, c):
+    if int(a) + int(b) > int(c) and int(b) + int(c) > int(a) and int(c) + int(a) > int(b):
+        return sqrt((int(a) + int(b) + int(c))/2 * ((int(a) + int(b) + int(c))/2 - int(a))
+                    * ((int(a) + int(b) + int(c))/2 - int(b)) * ((int(a) + int(b) + int(c))/2 - int(c)))
+    else:
+        return "No triangle exists with side lengths " + str(a) + ", " + str(b) + ", and " + str(c)
+
+
+# prints returned values from functions
+print("Sum: " + str(sum(a, b, c)))
+print("Product: " + str(product(a, b, c)))
+print("Smallest: " + str(smallest(a, b, c)))
+print("Largest: " + str(largest(a, b, c)))
+print("Area: " + str(area(a, b, c)))
