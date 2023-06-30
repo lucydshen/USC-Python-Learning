@@ -1,0 +1,36 @@
+# imports the package "random"
+import random
+
+
+# asks for user to input number from 1-4
+user_number = int(input("Choose a number from 1 to 4:"))
+# generates user action based on inputted number
+user_action = {0: "Rock", 1: "Paper", 2: "Scissors", 3: "Spock", 4: "Lizard"}
+
+# defines possible actions and what each choice defeats
+actions = ["Rock", "Paper", "Scissors", "Spock", "Lizard"]
+defeats = {"Rock": ["Lizard", "Scissors"], "Paper": ["Rock", "Spock"], "Scissors": ["Paper", "Lizard"],
+           "Spock": ["Scissors", "Rock"], "Lizard": ["Spock", "Paper"]}
+
+
+# function that generates a random action for the computer
+def generate_computer_action():
+    index = random.randint(0, 4)
+    random_action = actions[index]
+    return random_action
+
+
+# prints user's action
+var_user_action = user_action[user_number]
+print("You picked: " + var_user_action)
+# prints computer's action
+computer_action = generate_computer_action()
+print("The computer picked: " + computer_action)
+
+# calculates the outcome as a result of the choices picked and generated
+if var_user_action in defeats[computer_action]:
+    print("You lose, the computer wins!")
+elif var_user_action == computer_action:
+    print("It's a tie!")
+else:
+    print("You win, the computer loses!")
